@@ -1,9 +1,16 @@
+/* 
+* Programa calcula el consumo electrico por mes
+* Fecha límite de entrega 23 mayo 2021
+* Hecho por: 
+            Mario Mesen Murillo
+            Rolando Alonso Chavarría Seas 
+*/
 #include <iostream>
 #include <iomanip>
 using namespace std;
 
 int opcion, opc2, a = 0, maxi=0, n=0;//variables globales
-float sub_total, total=0, suma=0;
+float sub_total=0, total=0, suma=0;
 
 int menu(void)//funcion para el menu
 {
