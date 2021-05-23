@@ -2,10 +2,10 @@
 #include <iomanip>
 using namespace std;
 
-int opcion, opc2, a = 0, maxi=0, n=0;
+int opcion, opc2, a = 0, maxi=0, n=0;//variables globales
 float sub_total, total=0, suma=0;
 
-int menu(void)
+int menu(void)//funcion para el menu
 {
 
 cout<<"\n\n**********************Consumo Durante el Mes*******";
@@ -16,20 +16,20 @@ cout<<"\nIngrese su opcion: ";
 return 0;
 }
 
-int main()
+int main()//funcion principañ
 {
   cout<<"\nDigite la cantidad de dispositivos que va ha ingresar " ;
-  cin>>maxi;
-  n=++maxi;
+  cin>>maxi;//de este dato dependera la cantidad de inpresiones en pantalla
+  n=1+maxi;//de este dato dependera el tamaño de los arreglos
   cout<<"\nLa cantidad de dispositivos que va ha ingresar es " <<maxi ;
   string nombre_dispositivo[n] , tipo[n];
-  float watt[n], cantidad[n], horas[n];
-
-do{
-menu();
-cin>>opcion;
-switch(opcion)
+  float watt[n], cantidad[n], horas[n];//arreglos dependientes de "n" para cantidad solicitada por usuario
+do{//ciclo do while
+menu();//llama la funcion menu
+cin>>opcion;//direcciona hacia el caso correspondiente
+switch(opcion)//contiene las tres opciones posibles del menu
 {
+  //Crear inventario
 	case 1 :
 	a++;
 	cout<<"\nIngrese el nombre del dispositivo: ";
@@ -45,7 +45,7 @@ switch(opcion)
 	cout<<"\nIngrese 1 para volver al menu y 0 para salir: ";
 	cin>>opc2;
 	break;
-
+  //Ver inventario
 	case 2 :
 		for (a=1; a<=maxi; a++)
 		{
@@ -62,13 +62,13 @@ switch(opcion)
 	cout<<"\nIngrese 1 para volver al menu y 0 para salir: ";
 	cin>>opc2;
 	break;
-
+  //Salir
 	case 3 :
 	return 0;
-
+  //por defecto propiedad del switch
 	default: cout << "Ha elegido una opcion invalida.";
 	cout<<"\nIngrese 1 para volver al menu y 0 para salir: ";
 	cin>>opc2;
 }
-}while(opc2 == 1);
+}while(opc2 == 1);//Termina el ciclo
 }
